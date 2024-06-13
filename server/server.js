@@ -43,7 +43,7 @@ app.use("/api/admin",adminRoute);
 //     res.status(200).send("Welcome to Registration Page");
 // });
 app.use(errorMiddleware);
-const PORT=5000;
+const PORT=5001;
 
 connectDB().then(()=>{
     app.listen(PORT,()=>{
