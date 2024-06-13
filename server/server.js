@@ -10,25 +10,33 @@ const serviceRoute =require("./router/service-router");
 const connectDB=require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 const adminRoute=require("./router/admin-router");
-const corsOptions={
-    origin:(origin,callback)=>{
-        const allowedOrigins=[
-            "http://localhost:5173",
-            "http://localhost:5002",
-            "http://localhost:4173",
-            "https://ridescom.com",
-            "https://www.ridescom.com",
-            "https://api.ridescom.com",
-            "https://api.www.ridescom.com",
-        ];
+// const corsOptions={
+//     origin:(origin,callback)=>{
+//         const allowedOrigins=[
+//             "http://localhost:5173",
+//             "http://localhost:5002",
+//             "http://localhost:4173",
+//             "https://ridescom.com",
+//             "https://www.ridescom.com",
+//             "https://api.ridescom.com",
+//             "https://api.www.ridescom.com",
+//         ];
         
-        const isAllowed=allowedOrigins.includes(origin);
-        callback(null,isAllowed ? origin: false);
+//         const isAllowed=allowedOrigins.includes(origin);
+//         callback(null,isAllowed ? origin: false);
 
-    },
+//     },
+//     methods:"GET, POST, PUT,DELETE,PATCH,HEAD",
+//     credentials:true,
+// };
+
+const corsOptions={
+    origin:"http://localhost:5173",
     methods:"GET, POST, PUT,DELETE,PATCH,HEAD",
     credentials:true,
-};
+}
+
+// app.use(cors(corsOptions));
 app.use(cors(corsOptions));
 
 app.use(express.json());
