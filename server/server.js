@@ -14,6 +14,7 @@ const corsOptions={
     origin:(origin,callback)=>{
         const allowedOrigins=[
             "http://localhost:5173",
+            "http://localhost:5002",
             "http://localhost:4173",
             "https://ridescom.com",
             "https://www.ridescom.com",
